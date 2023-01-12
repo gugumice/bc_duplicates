@@ -1,0 +1,7 @@
+[Unit]
+Description=One time dupl config boot script
+[Service]
+Type=simple
+ExecStart=/opt/dupl/initdupl.sh
+[Install]
+WantedBy=multi-user.target 
