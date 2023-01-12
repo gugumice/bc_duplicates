@@ -7,11 +7,10 @@ apt-get update && apt-get -y upgrade
 
 ln /opt/dupl/dupl.service /lib/systemd/system/dupl.service
 ln /opt/dupl/firstboot.service /lib/systemd/system/firstboot.service
-ln /opt/dupl/config.ini /home/pi/kiosk.ini
+ln /opt/dupl/config.ini /home/pi/config.ini
 systemctl enable firstboot.service
 
 sed -i '/^# Additional overlays.*/a dtoverlay=pi3-disable-wifi\ndtoverlay=pi3-disable-bt' /boot/config.txt
-apt-get --yes install libcups2-dev cups cups-bsd
 
 addgroup watchdog
 usermod -a -G watchdog pi
