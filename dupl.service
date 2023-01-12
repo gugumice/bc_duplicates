@@ -7,7 +7,7 @@ After=network.target
 #Type=idle
 Environment="SCRIPT_ARGS=-c /opt/dupl/config.ini"
 #ExecStart=/usr/bin/python3 -u "/opt/dupl/dup.py" "-c /opt/kiosk/config.ini"
-ExecStart="/opt/kiosk/dup.py" $SCRIPT_ARGS
+ExecStart="/opt/dupl/dup.py" $SCRIPT_ARGS
 
 WorkingDirectory=/opt/dupl/
 StandardOutput=inherit
