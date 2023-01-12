@@ -30,8 +30,13 @@ def main():
     #Read from config file
     config = read_config(args.config)
     #Debug
-    #print(config)
-
+    print(config)
+    #Set up logging
+    try:
+        logging.basicConfig(filename=config['log_file'],filemode='a',level=logging.INFO,format='%(message)s')
+    except Exception as e:
+        logging.basicConfig(level=logging.INFO,format='%(message)s')
+        logging.error(e)
     #Assume all files are in working directory
     work_directory = os.getcwd()
 
@@ -91,8 +96,7 @@ def main():
     #End main loop -----------------------------------------------------------------------------------------------
 
 if __name__ == "__main__":
-    #logging.basicConfig(filename='/home/pi/dmitri.log',filemode='a',level=logging.INFO,format='%(message)s')
-    logging.basicConfig(level=logging.INFO,format='%(message)s')
+
     try:
         main()
     except KeyboardInterrupt:
