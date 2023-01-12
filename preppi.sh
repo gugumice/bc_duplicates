@@ -15,7 +15,7 @@ sed -i '/^# Additional overlays.*/a dtoverlay=pi3-disable-wifi\ndtoverlay=pi3-di
 addgroup watchdog
 usermod -a -G watchdog pi
 apt-get --yes install python3-pip
-
+pip3 --no-input install pyserial
 #apt-get --yes --allow-downgrades --allow-remove-essential --allow-change-held-packages install python3-pip
 echo 'KERNEL=="watchdog", MODE="0660", GROUP="watchdog"' > /etc/udev/rules.d/60-watchdog.rules
 sed -i '/^#NTP=.*/a FallbackNTP=laiks.egl.local' /etc/systemd/timesyncd.conf
