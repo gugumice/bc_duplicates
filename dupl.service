@@ -1,0 +1,19 @@
+
+[Unit]
+Description=Find dublicate scans
+After=network.target
+
+[Service]
+#Type=idle
+Environment="SCRIPT_ARGS=-c /opt/dupl/config.ini"
+#ExecStart=/usr/bin/python3 -u "/opt/dupl/dup.py" "-c /opt/kiosk/config.ini"
+ExecStart="/opt/kiosk/dup.py" $SCRIPT_ARGS
+
+WorkingDirectory=/opt/dupl/
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
