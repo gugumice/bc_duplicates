@@ -1,12 +1,12 @@
 
 [Unit]
-Description=Find dublicate scans
+Description=Dublicate scans
 After=network.target
 
 [Service]
 #Type=idle
-Environment="SCRIPT_ARGS=-c /opt/dupl/config.ini"
-#ExecStart=/usr/bin/python3 -u "/opt/dupl/dup.py" "-c /opt/kiosk/config.ini"
+Environment="SCRIPT_ARGS=-c /opt/dupl/kiosk.ini"
+#ExecStart=/usr/bin/python3 -u "/opt/dupl/dup.py" "-c /opt/dupl/config.ini"
 ExecStart="/opt/dupl/dup.py" $SCRIPT_ARGS
 
 WorkingDirectory=/opt/dupl/
