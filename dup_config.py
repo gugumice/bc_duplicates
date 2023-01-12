@@ -6,6 +6,7 @@ def read_config(conf_file):
     #Defaults
     config={
         'watchdog_device': None,
+        'log_file': 'dupl.log',
         'bc_reader_port': '/dev/ttyACM0',
         'bc_timeout' : 1,
         'bc_regex': '^\d{7,9}',
@@ -19,6 +20,7 @@ def read_config(conf_file):
     try:
         cf.read(conf_file)
         config['watchdog_device'] = cf.get('IFACE','watchdog_device')
+        config['log_file'] = cf.get('IFACE','log_file')
         config['bc_reader_port'] = cf.get('IFACE','bc_reader_port')
         config['bc_timeout'] = cf.getint('IFACE','bc_timeout')
         config['bc_regex'] = cf.get('IFACE','bc_regex')
