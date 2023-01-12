@@ -23,7 +23,7 @@ sed -i '/^#NTP=.*/a FallbackNTP=laiks.egl.local' /etc/systemd/timesyncd.conf
 chattr -i /etc/hosts
 echo '10.100.20.104   laiks.egl.local' >> /etc/hosts
 chattr +i /etc/hosts
-#Get ound files
+#Get sound effects
 wget https://www.freespecialeffects.co.uk/soundfx/computers/pop3.wav
 wget https://www.freespecialeffects.co.uk/soundfx/bleep_02.wav
 wget https://www.freespecialeffects.co.uk/soundfx/glass/glassbreak_2.wav
