@@ -24,7 +24,7 @@ echo '10.100.20.104   laiks.egl.local' >> /etc/hosts
 chattr +i /etc/hosts
 #Get sound effects
 wget https://www.freespecialeffects.co.uk/soundfx/computers/pop3.wav
-wget https://www.freespecialeffects.co.uk/soundfx/bleep_02.wav
+wget https://www.freespecialeffects.co.uk/soundfx/computers/bleep_02.wav
 wget https://www.freespecialeffects.co.uk/soundfx/glass/glassbreak_2.wav
 chown pi:pi *.*
 #/usr/sbin/shutdown -r now
